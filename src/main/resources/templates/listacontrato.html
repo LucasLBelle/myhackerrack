@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt">
+ <head>
+	<!-- Required meta tags -->
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
+ 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+ 	<!-- Bootstrap CSS -->
+ 	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+
+ 	<title>Dados Contratos API Governo</title>
+ </head>
+ <body>
+ 	<div class="container">
+ 		<div id="listacontrato">
+ 			<table class="table table-hover">
+			<thead>
+				<tr>
+					<th>Identificador</th>
+					<th>Cnpj Contratada</th>
+					<th>Data de Assinatura</th>
+					<th>Origem da Licitação</th>
+					<th>Ação</th>
+				</tr>
+			</thead>
+			<tr th:each="contrato : ${contratos}">
+				<td><span th:text="${contratos.identificador}"></span></td>
+				<td><span th:text="${contratos.cnpj_contratada}"></span></td>
+				<td><span th:text="${contratos.data_assinatura}"></span></td>
+				<td><span th:text="${contratos.origem_licitacao}"></span></td>	
+				<td><a class="btn btn-danger" href="removecompra/${compra.id}">Excluir</button></td>
+			</tr>
+		</table>			
+	</div>
+	
+	<hr>
+		<form action="adicionacompra" method="post">
+			<div class="form-group">
+				<label for="nome">Nome</label>
+				<input type="text" class="form-control" id="nome" name="nome" placeholder="Nome"/>
+			</div>	
+			<button type="submit" class="btn btn-success">Adicionar</button>
+		</form>
+	</hr>
+	
+	<!-- JavaScripts: jQuery, Popper, Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+	<script src="bootstrap/js/bootstrap.min.js"></script>
+ </body>
+</html>

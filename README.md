@@ -1,2 +1,2 @@
-# myhackerrack
+# mytest
 My implementations from code challanges
